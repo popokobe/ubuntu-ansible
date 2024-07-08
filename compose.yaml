@@ -3,6 +3,8 @@ services:
     container_name: ubuntu-c
     hostname: ubuntu-c
     build: ./ubuntu-c
+    volumes:
+    - ./ubuntu-c/ansible:/etc/ansible
     tty: true
 
   ubuntu-t1:
