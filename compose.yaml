@@ -13,4 +13,5 @@ services:
     build: ./ubuntu-t1
     ports:
     - 2222:22
+    - 8080:80
     tty: true

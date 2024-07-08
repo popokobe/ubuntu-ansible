@@ -52,4 +52,4 @@
 ## green.example.com
 ## blue.example.com
 
-ubuntu-t1 ansible_connection=ssh ansible_user=root ansible_password=password
+ubuntu-t1 ansible_user=root ansible_password=password

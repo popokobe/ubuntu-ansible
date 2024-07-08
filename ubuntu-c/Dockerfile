@@ -9,3 +9,5 @@ RUN apt update && \
 # Install utilities
 RUN apt install -y \
     vim
+
+WORKDIR /etc/ansible
