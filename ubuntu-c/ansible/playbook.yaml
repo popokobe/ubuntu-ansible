@@ -1,4 +1,5 @@
 - name: Deploy apache server
-  hosts: all
+  gather_facts: no
+  hosts: ubuntu-t
   roles:
-  - apache
+  - apache2
