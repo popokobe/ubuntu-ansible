@@ -1,0 +1,12 @@
+services:
+  ubuntu-c:
+    container_name: ubuntu-c
+    hostname: ubuntu-c
+    build: ./ubuntu-c
+    tty: true
+
+  ubuntu-t1:
+    container_name: ubuntu-t1
+    hostname: ubuntu-t1
+    build: ./ubuntu-t1
+    tty: true
