@@ -6,7 +6,6 @@ RUN apt update && \
     apt-add-repository --yes --update ppa:ansible/ansible && \
     apt install -y ansible
 
-
 # Install utilities
 RUN apt install -y \
     vim
