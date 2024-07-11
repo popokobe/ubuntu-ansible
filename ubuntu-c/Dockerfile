@@ -1,18 +1,8 @@
 FROM ubuntu:24.04
 
-ENV RBENV_ROOT=/opt/rbenv
-ENV PATH=${RBENV_ROOT}/bin:${RBENV_ROOT}/shims:$PATH
-ENV RUBY_VERSION=3.1.3
-
-# Install utilities
-RUN apt update && \
-    apt install -y \
-    curl \
-    vim \
-    git
-
 # Install Ansible
-RUN apt install -y software-properties-common && \
+RUN apt update && \
+    apt install -y software-properties-common && \
     apt-add-repository --yes --update ppa:ansible/ansible && \
     apt install -y ansible
 
@@ -34,6 +24,17 @@ RUN apt install -y \
     libdb-dev \
     uuid-dev
 
+ENV RBENV_ROOT=/opt/rbenv
+ENV PATH=${RBENV_ROOT}/bin:${RBENV_ROOT}/shims:$PATH
+ENV RUBY_VERSION=3.1.6
+
+# Install utilities
+RUN apt install -y \
+    sudo \
+    curl \
+    vim \
+    git
+
 # Install rbenv and ruby-build
 RUN git clone https://github.com/rbenv/rbenv.git ${RBENV_ROOT} && \
     git clone https://github.com/rbenv/ruby-build.git ${RBENV_ROOT}/plugins/ruby-build && \
@@ -46,5 +47,7 @@ RUN rbenv install ${RUBY_VERSION} && \
     
 WORKDIR /etc/ansible
 
+COPY ./ansible /etc/ansible
+
 # Default command to run bundle install and then open a shell
-CMD ["bash", "-c", "bundle install && ansiblespec-init && exec /bin/bash"]
+CMD ["bash", "-c", "bundle install && exec /bin/bash"]

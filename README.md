@@ -8,12 +8,15 @@ docker compose up -d
 docker exec -it ubuntu-c /bin/bash
 ```
 
-## Ansible実行
+## Ansible, ansible_spec実行
 ```
+root@ubuntu-c:/# bundle install
+root@ubuntu-c:/# rake all
 root@ubuntu-c:/# ansible-playbook playbook.yaml
+root@ubuntu-c:/# rake all
 ```
 
-## Apache起動確認
+## ブラウザでApache起動確認
 ブラウザに <http://localhost:8080/> を入力
 
 Apache2 Default Pageが表示されればOK

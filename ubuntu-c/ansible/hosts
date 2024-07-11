@@ -1,2 +1,2 @@
-[ubuntu-t]
+[servers]
 ubuntu-t1 ansible_user=root ansible_password=password
