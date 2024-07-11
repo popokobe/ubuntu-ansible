@@ -30,7 +30,6 @@ ENV RUBY_VERSION=3.1.6
 
 # Install utilities
 RUN apt install -y \
-    sudo \
     curl \
     vim \
     git
@@ -49,5 +48,4 @@ WORKDIR /etc/ansible
 
 COPY ./ansible /etc/ansible
 
-# Default command to run bundle install and then open a shell
-CMD ["bash", "-c", "bundle install && exec /bin/bash"]
+RUN bundle install
