@@ -1,0 +1,4 @@
+---
+-
+  playbook: site.yaml
+  inventory: hosts
