@@ -1,3 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'ansible_spec', '0.3.2'
+
+# ============ ansible_spec公開鍵認証用gem ============
+gem 'ed25519', '1.3.0'
+gem 'bcrypt_pbkdf', '1.1.1'
+# ===================================================
