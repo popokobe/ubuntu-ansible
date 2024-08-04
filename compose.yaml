@@ -3,6 +3,8 @@ services:
     container_name: ubuntu-c
     hostname: ubuntu-c
     build: ./ubuntu-c
+    depends_on:
+    - ubuntu-t1
     tty: true
 
   ubuntu-t1:

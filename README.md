@@ -10,9 +10,8 @@ docker exec -it ubuntu-c /bin/bash
 
 ## Ansible, ansible_spec実行
 ```
-root@ubuntu-c:/# bundle install
 root@ubuntu-c:/# rake all
-root@ubuntu-c:/# ansible-playbook playbook.yaml
+root@ubuntu-c:/# ansible-playbook site.yaml
 root@ubuntu-c:/# rake all
 ```
 
