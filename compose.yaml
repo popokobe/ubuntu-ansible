@@ -2,7 +2,9 @@ services:
   ubuntu-c:
     container_name: ubuntu-c
     hostname: ubuntu-c
-    build: ./ubuntu-c
+    build:
+      context: ./ubuntu-c
+      target: final
     depends_on:
     - ubuntu-t1
     tty: true
