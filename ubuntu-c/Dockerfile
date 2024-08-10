@@ -1,8 +1,11 @@
+# ========================
+# Build stage for rbenv and ruby installation
+# ========================
 FROM ubuntu:24.04 AS builder
 
 # Install necessary packages for building Ruby
 RUN apt update && \
-    apt install -y  \
+    apt install -y --no-install-recommends \
     curl \
     git \
     autoconf \
@@ -19,7 +22,8 @@ RUN apt update && \
     libgdbm6 \
     libgdbm-dev \
     libdb-dev \
-    uuid-dev && \
+    uuid-dev \
+    ca-certificates && \
     rm -rf /var/lib/apt/lists/*
 
 # Set environment variables for rbenv and Ruby version    
@@ -32,11 +36,15 @@ RUN git clone https://github.com/rbenv/rbenv.git ${RBENV_ROOT} && \
     ${RBENV_ROOT}/bin/rbenv install ${RUBY_VERSION} && \
     ${RBENV_ROOT}/bin/rbenv global ${RUBY_VERSION}
 
+# ========================
+# Runtime stage with rbenv, ruby, and ansible included
+# ========================
 FROM ubuntu:24.04 AS final
 
 # Install packages for gems and install Ansible
 RUN apt update && \
-    apt install -y \
+    apt install -y --no-install-recommends \
+    build-essential \
     make \
     gcc \
     vim \

@@ -1,21 +1,21 @@
-## コンテナ立ち上げ
+## Build images and start containers
+Image builds take a certain amount of time. Just be patient and wait it out.
 ```
-docker compose up -d
-```
-
-## Ansibleコントロールノードへ接続
-```
-docker exec -it ubuntu-c /bin/bash
+docker compose up -d --build
 ```
 
-## Ansible, ansible_spec実行
+## Connect to Ansible control node
 ```
-root@ubuntu-c:/# rake all
-root@ubuntu-c:/# ansible-playbook site.yaml
-root@ubuntu-c:/# rake all
+docker compose exec ubuntu-c bash
 ```
 
-## ブラウザでApache起動確認
-ブラウザに <http://localhost:8080/> を入力
+## Run Ansible playbook and run tests with ansible_spec
+```
+root@ubuntu-c:/etc/ansible/# ansible-playbook site.yaml
+root@ubuntu-c:/etc/ansible/# rake all
+```
 
-Apache2 Default Pageが表示されればOK
+## Make sure Apache is running in your browser
+Enter <http://localhost:8080/> in your browser
+
+If the `Apache2 Default Page`is displayed, it means that the ansible execution and the test with ansible_spec were successful.
