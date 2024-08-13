@@ -1,6 +1,0 @@
-- name: Deploy apache server
-  gather_facts: no
-  hosts: webservers
-  roles:
-  - apache2
-  

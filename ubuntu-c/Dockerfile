@@ -61,15 +61,10 @@ COPY --from=builder /opt/rbenv /opt/rbenv
 ENV RBENV_ROOT=/opt/rbenv
 ENV PATH=${RBENV_ROOT}/bin:${RBENV_ROOT}/shims:$PATH
 
-COPY ./ansible /etc/ansible
-
-WORKDIR /etc/ansible
-
-# Install necessary Ruby gems
-RUN bundle install
-
 # Script for deploying ssh key to the target host
 COPY deploy_ssh_keys.sh /root/deploy_ssh_keys.sh
 RUN chmod +x /root/deploy_ssh_keys.sh
 
 CMD ["/root/deploy_ssh_keys.sh"]
+
+WORKDIR /etc/ansible

@@ -11,7 +11,7 @@ docker compose exec ubuntu-c bash
 
 ## Run Ansible playbook and run tests with ansible_spec
 ```
-root@ubuntu-c:/etc/ansible/# ansible-playbook site.yaml
+root@ubuntu-c:/etc/ansible/# ansible-playbook site.yml
 root@ubuntu-c:/etc/ansible/# rake all
 ```
 

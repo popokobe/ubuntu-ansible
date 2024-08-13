@@ -1,8 +1,0 @@
-source 'https://rubygems.org'
-
-gem 'ansible_spec', '0.3.2'
-
-# === Gem for public key authentication with ansible_spec ===
-gem 'ed25519', '1.3.0'
-gem 'bcrypt_pbkdf', '1.1.1'
-# ===========================================================
