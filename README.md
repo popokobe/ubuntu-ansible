@@ -1,6 +1,7 @@
 # ubuntu-ansible
 Through a simple hands-on session, get to run [Ansible](https://github.com/ansible/ansible) and [ansible_spec](https://github.com/volanja/ansible_spec) on Ubuntu.
-Install and start apache2 with Ansible and check if apache2 is installed with ansible_spec.
+In this hands-on, we will use Ansible to install apache2 and start the web server, and check if apache2 is installed with ansible_spec.
+
 If further interest arises, try adding more target hosts, changing the playbook, or adding test code.
 
 ## Build images and start containers
