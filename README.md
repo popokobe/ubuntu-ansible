@@ -4,6 +4,11 @@ In this hands-on, use Ansible to install apache2 and start the web server, and c
 
 If further interest arises, try adding more target hosts, changing the playbook, or adding test code.
 
+> [!NOTE]
+> Zennにも記事を投稿しているので、詳しく知りたい方はそちらもご参照ください。
+>
+> [Dockerで鍵認証によるAnsibleとansible_specの実行環境を構築](https://zenn.dev/popokobe/articles/ubuntu-ansible)
+
 ## Build images and start containers
 Image builds take a certain amount of time. Just be patient and wait it out.
 ```
